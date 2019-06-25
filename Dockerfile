@@ -5,7 +5,6 @@ ENV \
   COMPILER=dmd \
   COMPILER_VERSION=2.085.0
 
-SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update -y \
   && apt-get install -y tzdata curl libcurl3 build-essential \
@@ -30,6 +29,8 @@ ENV \
 WORKDIR /src
 
 COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
