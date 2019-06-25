@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 ARG TZ='Asia/Shanghai'
-ENV TZ ${TZ} \
+ENV \
   COMPILER=dmd \
   COMPILER_VERSION=2.085.0
 
