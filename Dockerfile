@@ -7,8 +7,10 @@ ENV TZ ${TZ} \
 
 RUN apt-get update -y \
   && apt-get install -y tzdata curl libcurl3 build-essential \
-  && curl -fsS https://dlang.org/install.sh | bash -s -p /dlang install "${COMPILER}-${COMPILER_VERSION}" \
+  && curl -fsS -o /tmp/install.sh https://dlang.org/install.sh \
+  && bash /tmp/install.sh -p /dlang install "${COMPILER}-${COMPILER_VERSION}" \
   && apt-get install -y gcc libmemcached-dev libpq-dev libmagickcore-6.q16-3 openssl libnss3 psmisc \
+  && rm /tmp/install.sh \
   && rm -rf /var/cache/apt \
   && rm -rf /dlang/${COMPILER}-*/linux/bin32 \
   && rm -rf /dlang/${COMPILER}-*/linux/lib32 \
