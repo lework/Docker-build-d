@@ -12,7 +12,7 @@ RUN apt-get update -y \
   && echo ${TZ} > /etc/timezone \
   && curl -fsS -o /tmp/install.sh https://dlang.org/install.sh \
   && bash /tmp/install.sh -p /dlang install "${COMPILER}-${COMPILER_VERSION}" \
-  && apt-get install -y gcc libmemcached-dev libpq-dev libmagickcore-6.q16-3 openssl libnss3 psmisc \
+  && apt-get install -y gcc libmemcached-dev libpq-dev libmagickcore-6.q16-3 openssl libnss3 psmisc default-libmysqlclient-dev \
   && rm /tmp/install.sh \
   && rm -rf /var/cache/apt \
   && rm -rf /dlang/${COMPILER}-*/linux/bin32 \
