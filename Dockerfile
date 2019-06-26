@@ -1,5 +1,7 @@
 FROM debian:stretch
 
+LABEL lework="lework <lework@yeah.net>"
+
 ENV \
   TZ='Asia/Shanghai' \
   COMPILER=dmd \
