@@ -5,7 +5,7 @@ LABEL lework="lework <lework@yeah.net>"
 ENV \
   TZ='Asia/Shanghai' \
   COMPILER="dmd" \
-  COMPILER_VERSION="2.085.0"
+  COMPILER_VERSION="2.086.1"
 
 
 RUN apt-get update -y \
